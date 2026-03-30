@@ -1,0 +1,99 @@
+<html>
+    <head>
+        <title>Advanced Calculator</title>
+        <style>
+            table{
+                background-color:lightblue;
+                border-radius:10px;
+            }
+            td{
+                background-color:lightgrey;
+                text-align:center;
+                border-radius:10px;
+            }
+            body{
+                font-family:Arial;
+                padding:10px;
+            }
+            button{
+                width:60px;
+                height:40px;
+                font-size:18px;
+                background-color:lightgrey;
+                border-radius:10px;
+                border:none;
+                cursor:pointer;
+            }
+            #disp{
+                height:40px;
+                font-size:20px;
+                padding-right:10px;
+                text-align:right;
+                background-color:white;
+            }
+            .clearbutton{
+                background-color:red;
+                color:white;
+            }
+            .calbut{
+                background-color:green;
+                color:white;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+            <br>
+            <br><br><br>
+            <h3>My Calculator</h3>
+            <table border="1" callspacing="10px" cellpadding="10px">
+                <tr>
+                    <td colspan="4" id="disp"></td>
+                </tr>
+                <tr>
+                    <td><button onclick="addv('7')">7</button></td>
+                    <td><button onclick="addv('8')">8</button></td>
+                    <td><button onclick="addv('9')">9</button></td>
+                    <td><button onclick="addv('+')">+</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="addv('4')">4</button></td>
+                    <td><button onclick="addv('5')">5</button></td>
+                    <td><button onclick="addv('6')">6</button></td>
+                    <td><button onclick="addv('-')">-</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="addv('1')">1</button></td>
+                    <td><button onclick="addv('2')">2</button></td>
+                    <td><button onclick="addv('3')">3</button></td>
+                    <td><button onclick="addv('*')">*</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="addv('0')">0</button></td>
+                    <td><button onclick="addv('/')">/</button></td>
+                    <td class="clearbutton"><button onclick="clearc()" class="clearbutton">c</button></td>
+                    <td class="calbut"><button onclick="calculatec()" class="calbut">=</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="addv('**')">x^y</button></td>
+                    <td><button onclick="addv('%')">%</button></td>
+                    <td colspan="2"><button onclick="addv('^')">XOR</button></td>
+                    
+                </tr>
+            </table>
+            <script>
+                function addv(value){
+                    document.getElementById("disp").innerHTML+=value;
+                }
+                function clearc(){
+                    document.getElementById("disp").innerHTML=" ";
+                }
+                function calculatec(){
+                    var exp=document.getElementById("disp").innerHTML;
+                    var res=eval(exp);
+                    document.getElementById("disp").innerHTML=res;
+                }
+            </script>
+        </center>
+    </body>
+</html>
